@@ -51,7 +51,7 @@ Comme sur iOS, Bonjourr active automatiquement son mode sombre lorsqu'il se fait
 
 🥖 Emoji en favicons
 
-🔒 Privacy focused
+🔒 Respecte votre confidentialité
 Certaines pages d'accueil comme Momentum vous encouragent à créer un compte chez eux, leur donner des informations personnelles, demandent plus de permissions et utilisent plus de services tiers. Bonjourr ne collecte aucune donnée, même pour des raisons télémétriques, demande moins de permissions et utilisent moins de services tiers. Bien sûr, Bonjourr étant open source signifie que vous pouvez vérifier vous-mêmes si tout cela est vrai ou non.
 
 🧑‍💻 CSS personnalisé
