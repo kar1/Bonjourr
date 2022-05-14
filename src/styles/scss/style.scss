@@ -19,6 +19,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	gap: 2em;
 
 	> * {
 		flex: 1 1 0px;
@@ -73,8 +74,8 @@
 		justify-content: center;
 		align-items: center;
 		margin: 0 auto;
-		background-color: cyan;
-		opacity: .4;
+		// background-color: cyan;
+		// opacity: .4;
 
 		#time-container {
 			#clock {
@@ -197,8 +198,8 @@
 		justify-content: center;
 		margin-right: auto;
 		margin-left: auto;
-		background-color: orange;
-		opacity: .4;
+		// background-color: orange;
+		// opacity: .4;
 
 		#greetings {
 			font-size: 3em;
@@ -226,7 +227,7 @@
 
 			#widget {
 				display: flex;
-				height: 5.6em;
+				margin-top: 1em;
 				justify-content: center;
 				align-items: center;
 
@@ -257,8 +258,25 @@
 	.widgets {
 		display: grid;
 		// background-color: rgb(0, 255, 119);
-		opacity: .4;
+		// opacity: .4;
 		// padding-bottom: 70px;
+		grid-gap: 3em;
+
+		// > * {
+		// 	margin-top: 3em;
+		// }
+
+		// > div:first-child {
+		// 	margin-top: unset;
+		// }
+
+		> div:last-child {
+			margin-bottom: 3em;
+		}
+
+		> div:first-child {
+			color: red!important;
+		}
 		
 	}
 
@@ -279,7 +297,7 @@
 
 		
 		// display: none;
-					background-color: rgb(170, 255, 0);
+					// background-color: rgb(170, 255, 0);
 		opacity: .9;
 
 		#searchbar {
@@ -357,7 +375,7 @@
 		max-width: 650px;
 		min-width: 150px;
 		min-height: 0;
-		margin: auto;
+		margin-right: auto; margin-left: auto;
 		user-select: text;
 		-moz-user-select: text;
 		-webkit-user-select: text;
@@ -365,8 +383,8 @@
 		transition: opacity 0.2s, flex-grow 0.4s 0.2s, min-height 0.4s 0.2s, transform 0.4s;
 		cursor: initial;
 		display: none;
-		background-color: rgb(255, 0, 0);
-		opacity: .4;
+		// background-color: rgb(255, 0, 0);
+		// opacity: .4;
 
 		#quote {
 			max-height: 0;
@@ -412,8 +430,8 @@
 		max-width: 100%;
 		// margin: 0 auto;
 		// padding-top: 2em;
-		background-color: rgb(238, 0, 255);
-		opacity: .4;
+		// background-color: rgb(238, 0, 255);
+		// opacity: .4;
 		// display: none;
 
 		@include hidden();
@@ -440,12 +458,13 @@
 			flex-wrap: wrap;
 			justify-content: center;
 			transition: visibility 0s 0s;
+			gap: 1em;
 		}
 
 		.block_parent {
 			cursor: pointer;
 			position: relative;
-			margin: 1em;
+			// margin: 1em;
 			width: 5em;
 
 			.block {
@@ -453,7 +472,7 @@
 					overflow: hidden;
 					width: 4.9em;
 					height: 4.9em;
-					margin: 0 auto 0.5em auto;
+					// margin: 0 auto 0.5em auto;
 					position: relative;
 					border-radius: 15px;
 					background: $purewhite;
