@@ -5,14 +5,24 @@
 	position: relative;
 	min-height: var(--app-height);
 	min-width: 350px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: space-around;
 	will-change: transform;
 	overflow: hidden;
 	transition-property: opacity, transform;
 	text-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2);
 	font-weight: 300;
+	// display: grid;
+	// align-items: center;
+	// grid-template-rows: 1fr 1fr minmax(33vh, auto);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	> * {
+		flex: 1 1 0px;
+	}
 
 	&.pushed {
 		#time,
@@ -63,6 +73,8 @@
 		justify-content: center;
 		align-items: center;
 		margin: 0 auto;
+		background-color: cyan;
+		opacity: .4;
 
 		#time-container {
 			#clock {
@@ -185,6 +197,8 @@
 		justify-content: center;
 		margin-right: auto;
 		margin-left: auto;
+		background-color: orange;
+		opacity: .4;
 
 		#greetings {
 			font-size: 3em;
@@ -240,23 +254,36 @@
 		}
 	}
 
+	.widgets {
+		display: grid;
+		// background-color: rgb(0, 255, 119);
+		opacity: .4;
+		// padding-bottom: 70px;
+		
+	}
+
 	// search bar
 	#sb_container {
 		position: relative;
 		display: flex;
+
 		visibility: visible;
 		align-items: center;
-		flex-grow: 0;
+		// flex-grow: 0;
 		padding: 0;
 		margin: 0 auto;
 		width: 35em;
-		border-radius: 10px;
-		max-width: calc(90% - 4em);
+		// border-radius: 10px;
+		// max-width: calc(90% - 4em);
 		transition: opacity 0.4s, transform 0.4s, margin 0.4s;
-		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+		
+		// display: none;
+					background-color: rgb(170, 255, 0);
+		opacity: .9;
 
 		#searchbar {
-			height: 2.5em;
+			height: 0;
 			width: 100%;
 			padding: 0 1em;
 			padding-right: calc(3em + 10px);
@@ -268,6 +295,7 @@
 			background-color: transparent;
 			transition: background-color 0.2s;
 			border: 1px solid rgba(255, 255, 255, 0.075);
+			box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 			&:focus {
 				@include frostedGlass($blur: 0, $alpha: 0.2, $fbTint: 255, $fbAlpha: 0.8, $fbColor: #222);
@@ -281,8 +309,12 @@
 		}
 
 		&.shown {
-			margin: 3em auto;
-			@include frostedGlass($alpha: 0.1, $fbAlpha: 0.5);
+			// margin: 3em auto;
+			// @include frostedGlass($alpha: 0.1, $fbAlpha: 0.5);
+
+			#searchbar {
+				height: 2.5em;
+			}
 
 			#searchbar:focus {
 				opacity: 1;
@@ -290,7 +322,8 @@
 		}
 
 		&.hidden {
-			flex-grow: 0;
+			// flex-grow: 0;
+			display: none;
 			visibility: hidden;
 		}
 
@@ -315,13 +348,13 @@
 	}
 
 	#quotes_container {
-		display: flex;
+		// display: flex;
 		flex-direction: column;
-		flex-grow: 0;
+		// flex-grow: 0;
 		opacity: 0;
 		row-gap: 1em;
-		width: 33vw;
-		max-width: 600px;
+		width: 50vw;
+		max-width: 650px;
 		min-width: 150px;
 		min-height: 0;
 		margin: auto;
@@ -331,6 +364,9 @@
 		will-change: transform, flex-grow;
 		transition: opacity 0.2s, flex-grow 0.4s 0.2s, min-height 0.4s 0.2s, transform 0.4s;
 		cursor: initial;
+		display: none;
+		background-color: rgb(255, 0, 0);
+		opacity: .4;
 
 		#quote {
 			max-height: 0;
@@ -350,10 +386,11 @@
 		}
 
 		&.shown {
-			min-height: 150px;
-			flex-grow: 0.2;
+			// min-height: 150px;
+			// flex-grow: 0.2;
 			opacity: 1;
 			transition: opacity 0.2s 0.2s, min-height 0.4s, flex-grow 0.4s, transform 0.4s;
+			display: flex;
 
 			#quote {
 				max-height: 180px;
@@ -371,15 +408,19 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		align-items: flex-start;
+		align-items: center;
 		max-width: 100%;
-		margin: 0 auto;
-		padding-top: 2em;
+		// margin: 0 auto;
+		// padding-top: 2em;
+		background-color: rgb(238, 0, 255);
+		opacity: .4;
+		// display: none;
 
 		@include hidden();
+		// display: none;
 
 		&.withQuotes {
-			flex-grow: 0.6;
+			// flex-grow: 0.6;
 			transition-property: flex-grow;
 			transition-duration: 0.4s;
 			transition-delay: 0.2s;
@@ -395,6 +436,7 @@
 		#linkblocks_inner {
 			width: 56em;
 			display: flex;
+			max-width: 100%;
 			flex-wrap: wrap;
 			justify-content: center;
 			transition: visibility 0s 0s;

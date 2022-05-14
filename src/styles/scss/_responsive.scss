@@ -1,6 +1,23 @@
-@media screen and (max-height: 900px) {
+// phones an touch screens
+@media (hover: none) and (pointer: coarse) {
+	#settings #bg_tn_wrap #fileContainer .thumbnail button {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-height: 1000px) {
 	body {
 		font-size: 13px;
+
+		#interface {
+
+		}
+	}
+}
+
+@media screen and (max-height: 800px) {
+	#interface {
+		// grid-template-rows: .5fr .5fr 1fr!important;
 	}
 }
 
