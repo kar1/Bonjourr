@@ -143,7 +143,7 @@ body {
 			#date,
 			#description,
 			#greetings,
-			#widget,
+			#tempContainer,
 			#forecast,
 			#current,
 			#linkblocks.withQuotes,
@@ -167,7 +167,7 @@ body {
 		#date,
 		#description,
 		#greetings,
-		#widget {
+		#tempContainer {
 			transition: opacity 0.4s;
 		}
 
@@ -185,7 +185,7 @@ body {
 		#date.he_hidden,
 		#description.he_hidden,
 		#greetings.he_hidden,
-		#widget.he_hidden {
+		#tempContainer.he_hidden {
 			opacity: 0;
 			display: none!important;
 		}

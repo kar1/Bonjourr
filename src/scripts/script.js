@@ -775,7 +775,7 @@ function weather(event, that, init) {
 	const sett_city = id('sett_city')
 	const current = id('current')
 	const forecast = id('forecast')
-	const widget = id('widget')
+	const tempContainer = id('tempContainer')
 
 	const toFarenheit = (num) => Math.round(num * (9 / 5) + 32)
 	const toCelsius = (num) => Math.round((num - 32) * (5 / 9))
@@ -952,7 +952,7 @@ function weather(event, that, init) {
 			}
 
 			current.textContent = `${desc[0].toUpperCase() + desc.slice(1)}. ${tempText}`
-			widget.querySelector('p').textContent = actual + '°'
+			tempContainer.querySelector('p').textContent = actual + '°'
 		}
 
 		function handleWidget() {
@@ -975,7 +975,7 @@ function weather(event, that, init) {
 				if (category[0].includes(currentState.icon_id)) filename = category[1]
 			})
 
-			const widgetIcon = widget.querySelector('img')
+			const widgetIcon = tempContainer.querySelector('img')
 			const { now, rise, set } = sunTime()
 			const timeOfDay = now < rise || now > set ? 'night' : 'day'
 			const iconSrc = `src/assets/weather/${timeOfDay}/${filename}.png`
@@ -986,10 +986,10 @@ function weather(event, that, init) {
 				const icon = document.createElement('img')
 				icon.src = iconSrc
 				icon.setAttribute('draggable', 'false')
-				widget.prepend(icon)
+				tempContainer.prepend(icon)
 
 				// from 1.2s request anim to .4s hide elem anim
-				setTimeout(() => (widget.style.transition = 'opacity .4s'), 400)
+				setTimeout(() => (tempContainer.style.transition = 'opacity .4s'), 400)
 			}
 		}
 
@@ -997,7 +997,7 @@ function weather(event, that, init) {
 		handleDescription()
 
 		clas(current, false, 'wait')
-		clas(widget, false, 'wait')
+		clas(tempContainer, false, 'wait')
 	}
 
 	function displaysForecast(weather) {
@@ -2581,7 +2581,7 @@ function customCss(init, event) {
 function hideElem(init, buttons, that) {
 	const IDsList = [
 		['time', ['time-container', 'date']],
-		['main', ['greetings', 'description', 'widget']],
+		['main', ['greetings', 'description', 'tempContainer']],
 		['linkblocks', ['linkblocks']],
 		['showSettings', ['showSettings']],
 	]
@@ -2765,7 +2765,7 @@ function filterImports(data) {
 				const widgetIndex = hide.indexOf('w_icon')
 
 				if (weatherIndex >= 0) hide[weatherIndex] = 'description'
-				if (widgetIndex >= 0) hide[widgetIndex] = 'widget'
+				if (widgetIndex >= 0) hide[widgetIndex] = 'tempContainer'
 			} else {
 				hide = [[0, 0], [0, 0, 0], [0], [0]]
 			}
