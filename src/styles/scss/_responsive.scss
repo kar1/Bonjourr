@@ -117,3 +117,91 @@
 		}
 	}
 }
+
+// landscape on phone
+@media screen and (max-width: 896px) and (max-height: 415px) {
+	#settings {
+		right: -400px;
+		width: 400px;
+	}
+	body #interface {
+		display: grid;
+		// grid-gap: 2em;
+		grid-template-columns: .33fr 1fr;
+		grid-template-rows: .75fr 1fr;
+		padding-right: 7em; padding-left: 7em;
+		
+
+		#widgets {
+			grid-column: 2;
+			grid-row: 1 / span 2;
+
+			> div:last-child {
+				margin: unset;
+			}
+		}
+		
+
+		#time, #main, #widgets {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: unset;
+			text-align: left;
+		}
+
+		#time, #main {
+			font-size: .8em;
+			// margin-left: 5em;
+		}
+
+		#main {
+			justify-content: flex-start;
+			align-items: flex-start;
+
+			#weather #tempContainer {
+				justify-content: flex-start;
+				margin-top: .5em;
+			}
+		}
+
+		#time {
+			align-items: flex-start;
+			justify-content: flex-end;
+		}
+
+		
+
+		
+
+
+
+		// #time {
+		// 	grid-column: col1-start;
+		// 	grid-row: row2-start ;
+		// }
+
+		// #main {
+		// 	grid-column: col1-start / col3-start;
+		// 	grid-row: row1-start ;
+		// }
+
+		// .widgets {
+		// 	grid-column: col3-start ;
+		// 	grid-row: row1-start / row2-end;
+		// }
+	}
+
+	#showSettings {
+		padding: 0 1.1em 1.1em 0;
+	}
+
+	#credit {
+		bottom: 1.7em;
+		left: 1.7em;
+		font-size: .7em;
+	}
+}
+
+
+

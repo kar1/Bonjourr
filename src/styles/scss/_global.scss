@@ -27,6 +27,7 @@ $easeOutThree: cubic-bezier(0.215, 0.61, 0.355, 1);
 
 body {
 	margin: 0;
+	// padding: 0;
 	cursor: default;
 	user-select: none;
 	-moz-user-select: none;
@@ -39,7 +40,7 @@ body {
 	max-height: var(--app-height);
 	text-align: center;
 	overflow: hidden auto;
-	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+	// padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 
 	p,
 	h3 {

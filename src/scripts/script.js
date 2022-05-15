@@ -756,7 +756,7 @@ async function linksImport() {
 
 function linksrow(data, event) {
 	function setRows(val) {
-		id('linkblocks_inner').style.width = `${val * 7}em`
+		id('linkblocks_inner').style.maxWidth = `${val * 7}em`
 	}
 
 	if (data !== undefined) setRows(data)
