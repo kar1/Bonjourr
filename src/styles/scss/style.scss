@@ -69,6 +69,11 @@
 		}
 	}
 
+	// if #main and #time are hidden, then aligns #widgets properly 😎
+	.he_hidden + .he_hidden + #widgets {
+		justify-content: space-around;
+	}
+
 	// clock & date
 	#time {
 		display: flex;
