@@ -98,12 +98,11 @@
 				border-radius: 100%;
 				border: 0.2em solid white;
 				box-shadow: $textShadow;
+				backdrop-filter: blur(15px);
+				-webkit-backdrop-filter: blur(15px);
+				
 
-				@include frostedGlass($alpha: 0.2, $fbAlpha: 0.2, $fbColor: #fff);
-
-				&:hover {
-					background: rgba(255, 255, 255, 0.2);
-				}
+				// @include frostedGlass($alpha: 0.2, $fbAlpha: 0.2, $fbColor: #fff);
 
 				&.hidden {
 					display: none;
@@ -263,7 +262,7 @@
 		// background-color: rgb(0, 255, 119);
 		// opacity: .4;
 		// padding-bottom: 70px;
-		gap: 3em;
+		gap: 4vh;
 
 		// > * {
 		// 	margin-top: 3em;
@@ -278,7 +277,7 @@
 		}
 
 		> div:first-child {
-			color: red!important;
+			margin-top: 3em;
 		}
 		
 	}
@@ -442,6 +441,7 @@
 		// background-color: rgb(238, 0, 255);
 		// opacity: .4;
 		// display: none;
+		transition: opacity .4s,transform .4s,margin .4s;
 
 		@include hidden();
 		// display: none;
@@ -451,6 +451,7 @@
 			transition-property: flex-grow;
 			transition-duration: 0.4s;
 			transition-delay: 0.2s;
+			transition: opacity .4s,transform .4s,margin .4s;
 		}
 
 		&.he_hidden {
@@ -883,7 +884,7 @@
 	a,
 	p,
 	span {
-		font-size: 13px;
+		font-size: .9em;
 		color: #fff9;
 		text-decoration: none;
 		transition: color 0.1s;
